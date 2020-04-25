@@ -31,7 +31,6 @@ install:
   - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist --no-suggest
 
 script:
-  - vendor/bin/phpunit
   - if [[ $RUN_PHPCS = 1 ]]; then vendor/bin/phpcs --ignore=*/src/views/* --standard=psr2 src/; fi
 
 notifications:
