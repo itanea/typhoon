@@ -10,15 +10,9 @@ cache:
 matrix:
   include:
     - php: '7.2'
-      env: LARAVEL='^7.0' COMPOSER_FLAGS='--prefer-lowest' RUN_PHPCS=1
-    - php: '7.2'
       env: LARAVEL='^7.0' COMPOSER_FLAGS='--prefer-stable' RUN_PHPCS=1
     - php: '7.3'
-      env: LARAVEL='^7.0' COMPOSER_FLAGS='--prefer-lowest' RUN_PHPCS=1
-    - php: '7.3'
       env: LARAVEL='^7.0' COMPOSER_FLAGS='--prefer-stable' RUN_PHPCS=1
-    - php: '7.4'
-      env: LARAVEL='^7.0' COMPOSER_FLAGS='--prefer-lowest' RUN_PHPCS=1
     - php: '7.4'
       env: LARAVEL='^7.0' COMPOSER_FLAGS='--prefer-stable' RUN_PHPCS=1
 
