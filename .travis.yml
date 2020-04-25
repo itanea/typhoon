@@ -24,9 +24,6 @@ install:
   - composer require --dev "illuminate/view:${LARAVEL}" --no-interaction --no-update
   - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist --no-suggest
 
-before_script:
-  - cp .env.example .env
-  - php artisan key:generate
 script:
   - if [[ $RUN_PHPCS = 1 ]]; then vendor/bin/phpcs --ignore=*/src/views/* --standard=psr2 src/; fi
 
