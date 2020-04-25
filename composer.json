@@ -1,14 +1,21 @@
 {
     "name": "itanea/typhoon",
+    "type": "library",
     "description": "A powerful backend for your Laravel application",
+    "keywords": [
+        "itanea",
+        "typhoon"
+    ],
+    "homepage": "https://github.com/itanea/typhoon",
     "license": "MIT",
     "authors": [
         {
-            "name": "ITANéA",
-            "email": "frederic.blanc@itanea.fr"
+            "name": "Frédéric Blanc",
+            "email": "frederic.blanc@itanea.fr",
+            "homepage": "https://www.itanea.fr/apprendre-le-developpement-web",
+            "role": "Developer"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php" : "~7.2"
     },
