@@ -1,10 +1,43 @@
 language: php
+
 php:
   - 7.2
   - 7.3
   - 7.4
+
 services:
   - mysql
+
 cache:
   directories:
     - $HOME/.composer/cache
+
+matrix:
+  include:
+    - php: '7.2'
+      env: LARAVEL='^7.0' COMPOSER_FLAGS='--prefer-lowest' RUN_PHPCS=1
+    - php: '7.2'
+      env: LARAVEL='^7.0' COMPOSER_FLAGS='--prefer-stable' RUN_PHPCS=1
+    - php: '7.3'
+      env: LARAVEL='^7.0' COMPOSER_FLAGS='--prefer-lowest' RUN_PHPCS=1
+    - php: '7.3'
+      env: LARAVEL='^7.0' COMPOSER_FLAGS='--prefer-stable' RUN_PHPCS=1
+    - php: '7.4'
+      env: LARAVEL='^7.0' COMPOSER_FLAGS='--prefer-lowest' RUN_PHPCS=1
+    - php: '7.4'
+      env: LARAVEL='^7.0' COMPOSER_FLAGS='--prefer-stable' RUN_PHPCS=1
+
+install:
+  - composer require "illuminate/support:${LARAVEL}" --no-interaction --no-update
+  - composer require "illuminate/console:${LARAVEL}" --no-interaction --no-update
+  - composer require "illuminate/filesystem:${LARAVEL}" --no-interaction --no-update
+  - composer require --dev "illuminate/config:${LARAVEL}" --no-interaction --no-update
+  - composer require --dev "illuminate/view:${LARAVEL}" --no-interaction --no-update
+  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist --no-suggest
+
+script:
+  - vendor/bin/phpunit
+  - if [[ $RUN_PHPCS = 1 ]]; then vendor/bin/phpcs --standard=psr2 src/; fi
+
+notifications:
+  email: false
