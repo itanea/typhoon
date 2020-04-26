@@ -10,6 +10,7 @@
 <body>
 
     <div class="container">
+        <h1>Bonjour {{ $name }}</h1>
         @yield('content')
     </div>
 

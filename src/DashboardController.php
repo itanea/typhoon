@@ -8,6 +8,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('itanea.typhoon.app');
+        $name = "John Doe";
+        return view('typhoon::app', compact('name'));
     }
 }
