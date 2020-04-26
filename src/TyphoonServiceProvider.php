@@ -28,6 +28,6 @@ class TyphoonServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->make('itanea\typhoon\DashboardController');
+
     }
 }
