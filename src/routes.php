@@ -2,4 +2,4 @@
 
 // use Illuminate\Support\Facades\Route;
 
-Route::resource('/dashboard', 'Itanea\Typhoondashboard\DashboardController');
+Route::resource('/dashboard', 'Itanea\Typhoon\DashboardController');

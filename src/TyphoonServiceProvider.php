@@ -1,10 +1,10 @@
 <?php
 
-namespace itanea\typhoondashboard;
+namespace Itanea\Typhoon;
 
 use Illuminate\Support\ServiceProvider;
 
-class TyphoondashboardServiceProvider extends ServiceProvider
+class TyphoonServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -15,9 +15,9 @@ class TyphoondashboardServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__.'/routes.php');
         //$this->loadMigrationsFrom(__DIR__.'/migrations');
-        $this->loadViewsFrom(__DIR__.'/views', 'typhoondashboard');
+        $this->loadViewsFrom(__DIR__.'/views', 'typhoon');
         $this->publishes([
-            __DIR__.'/views' => base_path('resources/views/itanea/typhoondashboard'),
+            __DIR__.'/views' => base_path('resources/views/itanea/typhoon'),
         ]);
     }
 
@@ -28,6 +28,6 @@ class TyphoondashboardServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->make('itanea\typhoondashboard\DashboardController');
+        $this->app->make('itanea\typhoon\DashboardController');
     }
 }
