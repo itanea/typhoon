@@ -28,6 +28,5 @@ class TyphoonServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
     }
 }
